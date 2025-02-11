@@ -19,6 +19,8 @@ from .create_ico_sphere import MYADDON_OT_create_ico_sphere
 from .export_scene import MYADDON_OT_export_scene
 from .add_drawCheck import MYADDON_OT_add_drawcheck
 from .add_drawCheck import OBJECT_PT_draw_check
+from .spawn_point import MYADDON_OT_spawn_import_symbol
+from .spawn_point import MYADDON_OT_spawn_create_symbol
 
 class TOPBAR_MT_my_menu(bpy.types.Menu):
     #Blenderがクラスを識別するための固有文字列
@@ -36,6 +38,7 @@ class TOPBAR_MT_my_menu(bpy.types.Menu):
         self.layout.operator(MYADDON_OT_stretch_vertex.bl_idname, text=MYADDON_OT_stretch_vertex.bl_label)
         self.layout.operator(MYADDON_OT_create_ico_sphere.bl_idname, text=MYADDON_OT_create_ico_sphere.bl_label)
         self.layout.operator(MYADDON_OT_export_scene.bl_idname, text=MYADDON_OT_export_scene.bl_label)
+        self.layout.operator(MYADDON_OT_spawn_create_symbol.bl_idname, text=MYADDON_OT_spawn_create_symbol.bl_label)
 
     #既存のメニューにサブメニューを追加
     def submenu(self, context):
@@ -45,6 +48,8 @@ classes = (
     MYADDON_OT_export_scene,
     MYADDON_OT_create_ico_sphere,
     MYADDON_OT_add_drawcheck,
+    MYADDON_OT_spawn_import_symbol,
+    MYADDON_OT_spawn_create_symbol,
     OBJECT_PT_draw_check,
     TOPBAR_MT_my_menu,
 )
